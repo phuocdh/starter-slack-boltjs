@@ -6,11 +6,10 @@ const receiver = new ExpressReceiver({ signingSecret: process.env.SLACK_SIGNING_
 receiver.router.use(express.static('public'))
 
 const app = new App({
-  receiver,
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
   socketMode: true,
-  appToken: process.env.SLACK_APP_TOKEN,
+  appToken: process.env.SLACK_APP_TOKEN
 });
 
 
